@@ -52,7 +52,7 @@
                 this.cloneStyles();
             }
             
-            offset  = this.$el.offset(),
+            offset  = this.$el.offset();
             pos     = this.$clone.find('.jCursorPos-cursor').position();
                 
             return {
