@@ -21,7 +21,7 @@
         };
 
     // constructor
-    function jCursorPos(element, options) {
+    function JCursorPos(element, options) {
         this.$el        = $(element);
         this.$clone     = {};
         this.$cursor    = {};
@@ -30,7 +30,7 @@
         this.init();
     }
     
-    jCursorPos.prototype = {
+    JCursorPos.prototype = {
         init: function () {
             
             var that = this;
@@ -161,7 +161,7 @@
         return this.each(function () {
             // prevent multiple instantiations
             if (!$.data(this, 'plugin_jCursorPos')) {
-                $.data(this, 'plugin_jCursorPos', new jCursorPos(this, options));
+                $.data(this, 'plugin_jCursorPos', new JCursorPos(this, options));
             }
         });
     };
