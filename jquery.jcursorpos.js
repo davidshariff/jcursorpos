@@ -10,6 +10,7 @@
  **/
 
 ;(function ($, window, document, undefined) {
+    'use strict';
     
     var defaults = {
             onChange: function(){}
@@ -35,7 +36,7 @@
             var that = this;
             
             this.createClone();
-            this.$el.bind('keyup keydown paste focus mouseup', function(e) {
+            this.$el.bind('keyup keydown paste focus mouseup', function() {
                 that.updateCursor();
                 that.updateOrig();
                 that.options.onChange.call(that.$el, that.$cursor);
