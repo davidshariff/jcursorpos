@@ -109,10 +109,10 @@
             else if ('selection' in document) {
                 
                 el.focus();
-                range = el.createTextRange(),
-                range2 = document.selection.createRange().duplicate(),
-                // get the opaque string
-                range2Bookmark = range2.getBookmark();
+                var range = el.createTextRange(),
+                    range2 = document.selection.createRange().duplicate(),
+                    // get the opaque string
+                    range2Bookmark = range2.getBookmark();
             
                 // move the current range to the duplicate range
                 range.moveToBookmark(range2Bookmark);
