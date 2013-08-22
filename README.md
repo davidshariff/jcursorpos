@@ -1,2 +1,2 @@
-jcursorpos
+jCursorPos
 ==========
