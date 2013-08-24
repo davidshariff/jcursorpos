@@ -25,7 +25,7 @@
         list-style: none;
       }
       #content-wrapper pre {
-        padding: 0 20px;
+        padding: 5px 20px;
       }
       .demo-wrap .val {
         background: #474747;
@@ -115,6 +115,24 @@ textarea.
 
 <p>
 An <code>onChange</code> callback is fired everytime the cursor moves, passing a <code>cursor</code> object as a function parameter.
+The <code>cursor</code> object contains the following properties:
+<table>
+  <tbody>
+    <tr>
+      <td>offset</td>
+      <table>
+        <tbody>
+          <tr>
+            <td>top</td>
+          </tr>
+          <tr>
+            <td>left</td>
+          </tr>
+        </tbody>
+      </table>
+    </tr>
+  </tbody>
+</table>
 </p>
 
 <h3>
