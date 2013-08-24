@@ -19,11 +19,12 @@
         width: 45%;
       }
       .demo-wrap {
-        clear: both;
+        overflow: auto;
       }
       .demo-el-1, .demo-el-2, .demo-el-3 {
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 16px;
+        width: 100%;
       }
       .demo-el-1, .demo-el-2 {
         height: 100px;
@@ -48,7 +49,7 @@
 <a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview.</h3>
 
 <p>JCursorPos is a cross browser plugin to get the cursor x/y and top/left coordinates in a textarea or input element. 
-Usage is as simple as:</p>
+To use, simply do the following:</p>
 
 <pre><code>&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;jquery.jcursorpos.js&quot;&gt;&lt;/script&gt;
@@ -57,7 +58,9 @@ Usage is as simple as:</p>
 $(&#39;textarea&#39;).jCursorPos();
 &lt;/script&gt;</code></pre>
 
-
+<p>
+The cursor position relative to the viewport will be returned, as well as the position of the cursor relative to the inside of the textarea or input element.
+</p>
 <h3>
 <a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h3>
 
@@ -67,7 +70,22 @@ $(&#39;textarea&#39;).jCursorPos();
     <textarea class="demo-el-2"></textarea>
     <input class="demo-el-3" type="text" val="Hello World">
   </div>
-  <div class="demo-results"></div>
+  <div class="demo-results">
+    
+    <ul>
+      <li>
+        <h4>Relative to Viewport</h4>
+        <p>X pos: </p>
+        <p>Y pos: </p>
+      </li>
+      <li>
+        <h4>Relative to Source Element</h4>
+        <p>X pos: </p>
+        <p>Y pos: </p>
+      </li>
+    </ul>
+    
+  </div>
 </div>
 
 <h3>
@@ -105,7 +123,7 @@ $(&#39;textarea&#39;).jCursorPos();
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="query.jcursorpos.js"></script>
+    <script src="javascripts/jquery.jcursorpos.js"></script>
     <script>
         
         $('.demo-el-1, .demo-el-2, .demo-el-3').jCursorPos({
