@@ -17,7 +17,7 @@
         },
         _HTML = {
             clone : '<div></div>',
-            clone_cursor: '<span class="jCursorPos-cursor">@</span>'
+            clone_cursor: '<span class="jCursorPos-cursor"></span>'
         };
 
     // constructor
