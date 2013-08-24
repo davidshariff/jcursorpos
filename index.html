@@ -12,7 +12,16 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+    <style>
+      .demo-el-1, .demo-el-2 {
+        margin-right: 1%;
+        float: left;
+        width: 45%;
+      }
+      .textarea-wrap {
+        clear: both;
+      }
+    </style>
     <title>JCursorPos by David Shariff</title>
   </head>
 
@@ -34,23 +43,19 @@
 <p>JCursorPos is a cross browser plugin to get the cursor x/y and top/left coordinates in a textarea or input element. 
 Usage is as simple as:</p>
 
-<pre><code>
-&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+<pre><code>&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;jquery.jcursorpos.js&quot;&gt;&lt;/script&gt;
 
 &lt;script&gt;
 $(&#39;textarea&#39;).jCursorPos();
-&lt;/script&gt;
-</code></pre>
+&lt;/script&gt;</code></pre>
 
 
 <h3>
 <a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h3>
 
-<div>
+<div class="textarea-wrap">
   <textarea class="demo-el-1"></textarea>
-</div>
-<div>
   <textarea class="demo-el-2"></textarea>
 </div>
 <div>
