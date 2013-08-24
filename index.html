@@ -13,13 +13,20 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <style>
-      .demo-el-1, .demo-el-2 {
+      .demo-els, .demo-results {
         margin-right: 1%;
         float: left;
         width: 45%;
       }
-      .textarea-wrap {
+      .demo-wrap {
         clear: both;
+      }
+      .demo-el-1, .demo-el-2, .demo-el-3 {
+        font-size: 20px;
+        line-height: 20px;
+      }
+      .demo-el-1, .demo-el-2 {
+        height: 100px;
       }
     </style>
     <title>JCursorPos by David Shariff</title>
@@ -54,12 +61,13 @@ $(&#39;textarea&#39;).jCursorPos();
 <h3>
 <a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h3>
 
-<div class="textarea-wrap">
-  <textarea class="demo-el-1"></textarea>
-  <textarea class="demo-el-2"></textarea>
-</div>
-<div>
-  <input class="demo-el-3" type="text" val="Hello World">
+<div class="demo-wrap">
+  <div class="demo-els">
+    <textarea class="demo-el-1"></textarea>
+    <textarea class="demo-el-2"></textarea>
+    <input class="demo-el-3" type="text" val="Hello World">
+  </div>
+  <div class="demo-results"></div>
 </div>
 
 <h3>
