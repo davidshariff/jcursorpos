@@ -117,29 +117,26 @@ textarea.
 An <code>onChange</code> callback is fired everytime the cursor moves, passing a <code>cursor</code> object as a function parameter.
 The <code>cursor</code> object contains the following properties:
 <table>
-  <tbody>
-    <tr>
-      <td>offset</td>
-      <td>
-        <table>
-          <tbody>
-            <tr>
-              <td>top</td>
-              <td>
-                description
-              </td>
-            </tr>
-            <tr>
-              <td>left</td>
-              <td>
-                description
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-  </tbody>
+<tbody>
+  <tr>
+    <td rowspan="2">offset</td>
+    <td>top</td>
+    <td>Y coordinate of the cursor from the document window</td>
+  </tr>
+  <tr>
+    <td>left</td>
+    <td>X coordinate of the cursor from the document window</td>
+  </tr>
+<tr>
+    <td rowspan="2">position</td>
+    <td>top</td>
+    <td>Y coordinate of the cursor from the source element</td>
+  </tr>
+  <tr>
+    <td>left</td>
+    <td>X coordinate of the cursor from the source element</td>
+  </tr>
+</tbody>
 </table>
 </p>
 
