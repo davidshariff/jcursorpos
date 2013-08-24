@@ -24,6 +24,9 @@
       .demo-wrap ul, .demo-wrap li {
         list-style: none;
       }
+      .demo-wrap pre {
+        padding: 0 20px;
+      }
       .demo-wrap .val {
         background: #474747;
         color: #fff;
@@ -65,8 +68,7 @@
 <p><a href="https://github.com/davidshariff/jcursorpos">JCursorPos</a> is a cross browser plugin to get the cursor x/y and top/left coordinates in a textarea or input element. 
 To use, simply do the following:</p>
 
-<pre><code>
-$('textarea').jCursorPos({
+<pre>{% highlight javascript %}<code>$('textarea').jCursorPos({
       onChange: function(cursor) {
       
           // the source element where the cursor is active
@@ -82,7 +84,7 @@ $('textarea').jCursorPos({
 
       }
 });
-</code></pre>
+{% endhighlight %}</code></pre>
 
 <p>
 The cursor position relative to the window will be returned, as well as the position of the cursor relative to the inside of the textarea or input element.
