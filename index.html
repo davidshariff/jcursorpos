@@ -72,18 +72,20 @@ The cursor position relative to the viewport will be returned, as well as the po
   </div>
   <div class="demo-results">
     
-    <ul>
-      <li>
-        <h4>Relative to Viewport</h4>
-        <p>X pos: </p>
-        <p>Y pos: </p>
-      </li>
-      <li>
-        <h4>Relative to Source Element</h4>
-        <p>X pos: </p>
-        <p>Y pos: </p>
-      </li>
-    </ul>
+      <div>
+        <h4>Position relative to viewport</h4>
+        <ul>
+          <li>X: <span class="viewport-x-val"></span></li>
+          <li>Y: <span class="viewport-y-val"></span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Position relative to source element</h4>
+        <ul>
+          <li>X: <span class="source-x-val"></span></li>
+          <li>Y: <span class="source-y-val"></span></li>
+        </ul>
+      </div>
     
   </div>
 </div>
@@ -125,15 +127,30 @@ The cursor position relative to the viewport will be returned, as well as the po
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="javascripts/jquery.jcursorpos.js"></script>
     <script>
+    
+      (function() {
+        
+        var display_v_x = $('viewport-x-val'),
+            display_v_y = $('viewport-y-val'),
+            display_s_x = $('source-x-val'),
+            display_s_x = $('source-y-val');
         
         $('.demo-el-1, .demo-el-2, .demo-el-3').jCursorPos({
             onChange: function(cursor) {
+              
+              display_v_x.html(cursor.offset.left);
+              display_v_y.html(cursor.offset.top);
+              display_s_x.html(cursor.position.left);
+              display_s_y.html(cursor.position.top);
+              
                 $('#marker').css({
                     'top': cursor.offset.top,
                     'left': cursor.offset.left
                 });
             }
         });
+        
+      }());
         
     </script>
         
