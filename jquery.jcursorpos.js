@@ -137,8 +137,8 @@
             
             var pos     = this.getCaretPos(),
                 text    = this.getText(),
-                before  = text.substring(0, pos).replace(/ /g, '&nbsp;').replace(/\n/g, '<br>'),
-                after   = text.substring(pos).replace(/ /g, '&nbsp;').replace(/\n/g, '<br>');
+                before  = text.substring(0, pos).replace(/ /g, '<span> </span>').replace(/\n/g, '<br>'),
+                after   = text.substring(pos).replace(/ /g, '<span> </span>').replace(/\n/g, '<br>');
             
             this.$clone.html(before  + _HTML.clone_cursor + after);
             this.$cursor = this.calcCursor();
