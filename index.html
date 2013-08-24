@@ -29,8 +29,13 @@
       .demo-el-1, .demo-el-2 {
         height: 100px;
       }
-      ul, li {
+      .demo-wrap ul, .demo-wrap li {
         list-style: none;
+      }
+      .demo-wrap span {
+        background: #000;
+        color: #fff;
+        padding: 2px;
       }
     </style>
     <title>JCursorPos by David Shariff</title>
@@ -76,12 +81,12 @@ The cursor position relative to the viewport will be returned, as well as the po
   <div class="demo-results">
     
         <ul>
-          <li>X pos to viewport: <span class="viewport-x-val"></span></li>
-          <li>Y pos to viewport: <span class="viewport-y-val"></span></li>
+          <li>Cursor Viewport X pos: <span class="viewport-x-val">0</span>px</li>
+          <li>Cursor Viewport Y pos: <span class="viewport-y-val">0</span>px</li>
         </ul>
         <ul>
-          <li>X pos to source: <span class="source-x-val"></span></li>
-          <li>Y pos to source: <span class="source-y-val"></span></li>
+          <li>Cursor Source X pos: <span class="source-x-val">0</span>px</li>
+          <li>Cursor Source Y pos: <span class="source-y-val">0</span>px</li>
         </ul>
     
   </div>
