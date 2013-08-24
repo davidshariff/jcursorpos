@@ -29,6 +29,9 @@
       .demo-el-1, .demo-el-2 {
         height: 100px;
       }
+      ul, li {
+        list-style: none;
+      }
     </style>
     <title>JCursorPos by David Shariff</title>
   </head>
@@ -72,20 +75,14 @@ The cursor position relative to the viewport will be returned, as well as the po
   </div>
   <div class="demo-results">
     
-      <div>
-        <p>Position relative to viewport</p>
         <ul>
-          <li>X: <span class="viewport-x-val"></span></li>
-          <li>Y: <span class="viewport-y-val"></span></li>
+          <li>X pos to viewport: <span class="viewport-x-val"></span></li>
+          <li>Y pos to viewport: <span class="viewport-y-val"></span></li>
         </ul>
-      </div>
-      <div>
-        <p>Position relative to source element</p>
         <ul>
-          <li>X: <span class="source-x-val"></span></li>
-          <li>Y: <span class="source-y-val"></span></li>
+          <li>X pos to source: <span class="source-x-val"></span></li>
+          <li>Y pos to source: <span class="source-y-val"></span></li>
         </ul>
-      </div>
     
   </div>
 </div>
@@ -138,10 +135,10 @@ The cursor position relative to the viewport will be returned, as well as the po
         $('.demo-el-1, .demo-el-2, .demo-el-3').jCursorPos({
             onChange: function(cursor) {
               
-              display_v_x.html(cursor.offset.left);
-              display_v_y.html(cursor.offset.top);
-              display_s_x.html(cursor.position.left);
-              display_s_y.html(cursor.position.top);
+              display_v_x.html(Math.round(cursor.offset.left));
+              display_v_y.html(Math.round(cursor.offset.top));
+              display_s_x.html(Math.round(cursor.position.left));
+              display_s_y.html(Math.round(cursor.position.top));
               
                 $('#marker').css({
                     'top': cursor.offset.top,
