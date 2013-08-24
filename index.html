@@ -27,6 +27,11 @@
       #content-wrapper pre {
         padding: 5px 20px;
       }
+      #content-wrapper td {
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 5px;
+      }
       .demo-wrap .val {
         background: #474747;
         color: #fff;
@@ -119,21 +124,21 @@ The <code>cursor</code> object contains the following properties:
 <table>
 <tbody>
   <tr>
-    <td rowspan="2">offset</td>
+    <td rowspan="2" align="center">offset</td>
     <td>top</td>
     <td>Y coordinate of the cursor from the document window</td>
   </tr>
   <tr>
-    <td>left</td>
+    <td align="center">left</td>
     <td>X coordinate of the cursor from the document window</td>
   </tr>
 <tr>
-    <td rowspan="2">position</td>
-    <td>top</td>
+    <td rowspan="2" align="center">position</td>
+    <td align="center">top</td>
     <td>Y coordinate of the cursor from the source element</td>
   </tr>
   <tr>
-    <td>left</td>
+    <td align="center">left</td>
     <td>X coordinate of the cursor from the source element</td>
   </tr>
 </tbody>
