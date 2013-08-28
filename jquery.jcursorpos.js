@@ -89,7 +89,8 @@
             this.$clone.css(this.$el.css(attrs)).css({
                 'left': '-9999px',
                 'position': 'absolute',
-                'word-wrap': word_wrap
+                'word-wrap': word_wrap,
+                'white-space': 'pre-wrap'
             });
             
         },
