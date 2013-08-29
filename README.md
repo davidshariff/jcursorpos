@@ -1,6 +1,6 @@
 jCursorPos
 ==========
-<a href="">JCursorPos</a> is a lightweight (2kb minified), cross browser plugin to get the cursor x/y and top / left coordinates in a textarea or input element. Once initialized, the cursor x/y position will be updated on the element's <code>data-*</code> attribute, and optionally passed to a callback function. 
+<a href="">JCursorPos</a> is a lightweight (2kb minified), cross browser plugin to get the cursor x / y and top / left coordinates in a textarea or input element. Once initialized, the cursor x / y position will be updated on the element's <code>data-*</code> attribute, and optionally passed to a callback function. 
 # Overview
 To use, simply include <code>jquery.jcursorpos.js</code> and do the following:
 
