@@ -17,7 +17,7 @@
         },
         _HTML = {
             clone : '<div></div>',
-            clone_cursor: '<span class="jCursorPos-cursor">@</span>'
+            clone_cursor: '<span class="jCursorPos-cursor"></span>'
         };
 
     // constructor
@@ -93,6 +93,14 @@
                 'white-space': 'pre-wrap'
             });
             
+            // scrollbar was added to source, update clone
+            if (this.$el.get(0).scrollHeight > this.$el.innerHeight()) {
+                this.$clone.css('overflow-y', 'scroll');
+            }
+            if (this.$el.get(0).scrollWidth > this.$el.innerWidth()) {
+                this.$clone.css('overflow-x', 'scroll');
+            }
+            
         },
         // creates the cloned element once
         createClone: function() {
@@ -138,8 +146,8 @@
             
             var pos     = this.getCaretPos(),
                 text    = this.getText(),
-                before  = text.substring(0, pos).replace(/ /g, '<span> </span>').replace(/\n/g, '<br>'),
-                after   = text.substring(pos).replace(/ /g, '<span> </span>').replace(/\n/g, '<br>');
+                before  = text.substring(0, pos).replace(/\n/g, '<br>'),
+                after   = text.substring(pos).replace(/\n/g, '<br>');
             
             this.$clone.html(before  + _HTML.clone_cursor + after);
             this.$cursor = this.calcCursor();
