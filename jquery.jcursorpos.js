@@ -87,14 +87,15 @@
                     'clip','float','clear','cursor','list-style-image','list-style-position',
                     'list-style-type','marker-offset'
                 ],
-                word_wrap = this.$el.prop('tagName') === 'TEXTAREA' ? 'break-word' : 'normal';
+                word_wrap   = this.$el.prop('tagName') === 'TEXTAREA' ? 'break-word' : 'normal',
+                white_space = this.$el.prop('tagName') === 'TEXTAREA' ? 'pre-wrap' : 'nowrap';
             
             // apply cloned styles and overwrite some as we want to position our clone offscreen
             this.$clone.css(this.$el.css(attrs)).css({
-                'left': '-9999px',
-                'position': 'absolute',
-                'word-wrap': word_wrap,
-                'white-space': 'pre-wrap'
+                'left'          : '-9999px',
+                'position'      : 'absolute',
+                'word-wrap'     : word_wrap,
+                'white-space'   : white_space
             });
             
             // scrollbar was added to source, update clone
