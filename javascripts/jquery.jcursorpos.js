@@ -7,17 +7,19 @@
  * http://davidshariff.com/blog/
  *
  * Licensed under the MIT license.
+ * 
  **/
 
 ;(function ($, window, document, undefined) {
     'use strict';
     
     var defaults = {
-            onChange: function(){}
+            onChange: function(){},
+            className: 'jCursorPos'
         },
         _HTML = {
-            clone : '<div></div>',
-            clone_cursor: '<span class="jCursorPos-cursor"></span>'
+            clone : '<pre class="' + defaults.className + ' ' + defaults.className + '-clone"></pre>',
+            clone_cursor: '<span class="' + defaults.className + ' ' + defaults.className + '-cursor"></span>'
         };
 
     // constructor
@@ -35,7 +37,9 @@
             
             var that = this;
             
+            this.createPluginStyles();
             this.createClone();
+            
             this.$el.bind('keyup keydown paste focus mouseup', function() {
                 that.updateCursor();
                 that.updateOrig();
@@ -54,7 +58,7 @@
             }
             
             offset  = this.$el.offset();
-            pos     = this.$clone.find('.jCursorPos-cursor').position();
+            pos     = this.$clone.find('.' + defaults.className + '-cursor').position();
                 
             return {
                 'position'  : pos,
@@ -106,6 +110,22 @@
         createClone: function() {
             this.$clone = $(_HTML.clone).appendTo($('body'));
             this.cloneStyles();
+        },
+        // creates plugin specific styles
+        createPluginStyles: function() {
+            
+            var style_tag = $('.' + defaults.className + '-styles');
+            
+            // once per page load
+            if (style_tag.length === 0) {
+                
+                style_tag = $('<style class="' + defaults.className + '-styles"></style>')
+                    .prepend('.' + defaults.className + ' br { display: block; }')
+                    .prepend('.' + defaults.className + '-cursor { display: inline-block; padding: 0; border: 0; }')
+                    .appendTo('head');
+    
+            }
+            
         },
         // gets the caret position of the source element's cursor
         getCaretPos: function() {
