@@ -104,7 +104,6 @@
             }
             if (this.$el.get(0).scrollWidth > this.$el.innerWidth()) {
                 this.$clone.css('overflow-x', 'scroll');
-                alert(1)
             }
             
         },
