@@ -116,8 +116,7 @@
         createPluginStyles: function() {
             
             var style_tag   = $('.' + defaults.className + '-styles'),
-                styles      =   '.' + defaults.className + ' br { display: block; }' +
-                                '.' + defaults.className + '-cursor { display: inline-block; padding: 0; border: 0; }';
+                styles      = '.' + defaults.className + '-cursor { display: inline-block; padding: 0; border: 0; }';
             
             // once per page load
             if (style_tag.length === 0) {
@@ -165,7 +164,7 @@
             if (!$.support.leadingWhitespace) {
                 text.replace(/ /g, '&#8203;&nbsp;&#8203;'); 
             }
-            return text.replace(/\r\n|\r|\n/g, '<br>');
+            return text.replace(/\r\n|\r|\n/g, '&#8203;<br>&#8203;');
         },
         // inserts the cloned cursor + text from the source element into the cloned element
         updateCursor: function() {
