@@ -115,16 +115,13 @@
         // creates plugin specific styles
         createPluginStyles: function() {
             
-            var style_tag = $('.' + defaults.className + '-styles');
+            var style_tag   = $('.' + defaults.className + '-styles'),
+                styles      =   '.' + defaults.className + ' br { display: block; }' +
+                                '.' + defaults.className + '-cursor { display: inline-block; padding: 0; border: 0; }';
             
             // once per page load
             if (style_tag.length === 0) {
-                
-                style_tag = $('<style class="' + defaults.className + '-styles"></style>')
-                    .prepend('.' + defaults.className + ' br { display: block; }')
-                    .prepend('.' + defaults.className + '-cursor { display: inline-block; padding: 0; border: 0; }')
-                    .appendTo('head');
-    
+                $('<style class="' + defaults.className + '-styles">' + styles + '</style>').appendTo('head');
             }
             
         },
