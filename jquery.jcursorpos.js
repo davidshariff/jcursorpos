@@ -104,6 +104,7 @@
             }
             if (this.$el.get(0).scrollWidth > this.$el.innerWidth()) {
                 this.$clone.css('overflow-x', 'scroll');
+                alert(1)
             }
             
         },
@@ -159,15 +160,23 @@
         getText: function() {
             return this.$el[0].contentEditable === 'true' ? this.$el.html() : this.$el.val();
         },
+        // takes raw text and preserves spaces / linebreaks
+        textToHTML: function(text) {
+            // <= IE8 strips leading whitespace
+            if (!$.support.leadingWhitespace) {
+                text.replace(/ /g, '&#8203;&nbsp;&#8203;'); 
+            }
+            return text.replace(/\r\n|\r|\n/g, '<br>');
+        },
         // inserts the cloned cursor + text from the source element into the cloned element
         updateCursor: function() {
             
             var pos     = this.getCaretPos(),
                 text    = this.getText(),
-                before  = text.substring(0, pos).replace(/\n/g, '<br>'),
-                after   = text.substring(pos).replace(/\n/g, '<br>');
+                before  = text.substring(0, pos),
+                after   = text.substring(pos);
             
-            this.$clone.html(before  + _HTML.clone_cursor + after);
+            this.$clone.html(this.textToHTML(before)  + _HTML.clone_cursor + this.textToHTML(after));
             this.$cursor = this.calcCursor();
             
         },
