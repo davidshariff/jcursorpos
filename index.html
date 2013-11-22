@@ -45,11 +45,9 @@
         width: 200px;
       }
       #marker {
-        background: #FF0000;
-        border-radius: 5px;
+        border-bottom: solid #000 1px;
+        border-right: solid #000 1px;
         left: -9999px;
-        height: 10px;
-        width: 10px;
         position: absolute;
       }
     </style>
@@ -214,8 +212,8 @@ Feel free to <a href="https://github.com/davidshariff/jcursorpos">fork</a> and s
               display_s_y.html(Math.round(cursor.position.top) + 'px');
               
                 $('#marker').css({
-                    'top': cursor.offset.top,
-                    'left': cursor.offset.left
+                    'height': cursor.offset.top,
+                    'width': cursor.offset.left
                 });
             }
         });
