@@ -45,11 +45,11 @@
         width: 200px;
       }
       #marker {
-        border-bottom: dashed #000 3px;
-        border-right: dashed #000 3px;
-        left: 0;
+        background: #ff0000;
+        border-radius: 5px;
+        height: 10px;
         position: absolute;
-        top: 0;
+        width: 10px;
       }
     </style>
     <title>JCursorPos by David Shariff</title>
@@ -213,8 +213,8 @@ Feel free to <a href="https://github.com/davidshariff/jcursorpos">fork</a> and s
               display_s_y.html(Math.round(cursor.position.top) + 'px');
               
                 $('#marker').css({
-                    'height': cursor.offset.top,
-                    'width': cursor.offset.left
+                    'top': cursor.offset.top,
+                    'left': cursor.offset.left
                 });
             }
         });
