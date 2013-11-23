@@ -118,7 +118,7 @@
             
             // apply cloned styles and overwrite some as we want to position our clone offscreen
             this.$clone.css(this.$el.css(attrs)).css({
-                'ldeft'          : '-9999px',
+                'left'          : '-9999px',
                 'position'      : 'absolute',
                 'word-wrap'     : word_wrap,
                 'white-space'   : white_space
