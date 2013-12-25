@@ -30,7 +30,7 @@
             className: 'jCursorPos'
         },
         _HTML = {
-            clone       : '<pre class="' + defaults.className + ' ' + defaults.className + '-clone"></pre>',
+            clone       : '<div class="' + defaults.className + ' ' + defaults.className + '-clone"></div>',
             clone_cursor: '<span class="' + defaults.className + ' ' + defaults.className + '-cursor"></span>',
             linebreak   : '&#8203;<br>&#8203;',
             space       : '&#8203;&nbsp;&#8203;'
