@@ -137,7 +137,7 @@
          * creates the cloned element once
          **/
         createClone: function() {
-            this.$clone = $(_HTML.clone).appendTo($('body'));
+            this.$clone = $(_HTML.clone).appendTo($('html'));
             this.cloneStyles();
         },
         /**
